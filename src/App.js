@@ -1,12 +1,15 @@
+import { useState } from 'react' ;
 
-import { AddMovieForm } from "./components/addMovieForm";
+import { AddMovie } from "./components/addMovieForm";
 import { MovieList } from "./components/MovieList"
 
+
 function App() {
+  const [movies, setMovies]= useState([])
   return (
     <>
-    <AddMovieForm/>
-    <MovieList/>
+    <AddMovie setMovies={setMovies} />
+    <MovieList movies ={movies}/> {/*  */}
     </>
   );
 }

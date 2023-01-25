@@ -1,20 +1,13 @@
 import { MovieCard } from "./MovieCard"
 
-export const MovieList = () => {
+export const MovieList = (props) => {
     return (
         <div >
             <h1 className="text-4xl font-semibold text-gray-500 text-center ">Movie List</h1>
             <div className="flex flex-wrap   gap-2 items-center justify-evenly">
-                <MovieCard/>
-                <MovieCard/>
-                <MovieCard/>
-                <MovieCard/>
-                <MovieCard/>
-                <MovieCard/>
-                <MovieCard/>
-                <MovieCard/>
-                <MovieCard/>
-                <MovieCard/>
+            {
+                props.movies.map((movie,i) => <MovieCard key={i} movie={movie}/>)
+            }
             </div>
         </div>
     )
